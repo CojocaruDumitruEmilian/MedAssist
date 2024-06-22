@@ -1,0 +1,81 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/border_background">
+
+    <TextView
+        android:id="@+id/userNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="User Name"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:layout_margin="2dp"
+        android:backgroundTint="#FFFFFF"
+        android:background="#D3D3D3" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Date"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:layout_margin="2dp"
+        android:backgroundTint="#FFFFFF"
+        android:background="#D3D3D3" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Time"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:layout_margin="2dp"
+        android:backgroundTint="#FFFFFF"
+        android:background="#D3D3D3" />
+
+    <TextView
+        android:id="@+id/diseaseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Disease"
+        android:textSize="14sp"
+        android:padding="4dp"
+        android:layout_margin="2dp"
+        android:backgroundTint="#FFFFFF"
+        android:background="#D3D3D3" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Accept"
+            android:padding="16dp"
+            style="@style/WhiteButton" />
+
+        <Button
+            android:id="@+id/refuseButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Refuse"
+            android:padding="16dp"
+            style="@style/WhiteButton" />
+    </LinearLayout>
+</LinearLayout>

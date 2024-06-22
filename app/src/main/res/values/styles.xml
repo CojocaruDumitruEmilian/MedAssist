@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="WhiteButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="backgroundTint">@android:color/white</item>
+        <item name="strokeColor">@android:color/black</item> <!-- Optional: to add a border -->
+        <item name="android:textColor">@android:color/black</item> <!-- Optional: to change text color -->
+        <item name="cornerRadius">16dp</item>
+    </style>
+</resources>

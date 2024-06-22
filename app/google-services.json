@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "419320375911",
+    "project_id": "proiectdiploma-2abd1",
+    "storage_bucket": "proiectdiploma-2abd1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419320375911:android:481709b79c914d624002c2",
+        "android_client_info": {
+          "package_name": "com.example.proiectdiploma"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDDVtLbQeMLmop3P5Qg3q2Edvxct19r2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

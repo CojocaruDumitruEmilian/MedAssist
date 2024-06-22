@@ -1,0 +1,130 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Layout-ul pentru întâlnirile acceptate -->
+    <LinearLayout
+        android:id="@+id/acceptedAppointmentsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/doctorappointments"
+        android:padding="16dp" />
+
+    <!-- Layout-ul pentru detaliile utilizatorului, inițial invizibil -->
+    <LinearLayout
+        android:id="@+id/userDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:visibility="gone"
+        android:elevation="10dp">
+
+        <!-- Conținutul layout-ului pentru detaliile utilizatorului -->
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="16sp"
+            android:padding="4dp" />
+
+        <!-- Alte elemente pentru detaliile utilizatorului -->
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewLatitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Latitude"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewLongitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Longitude"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewUserType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Type"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewAllergies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Allergies"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewSymptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Symptoms"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewProblems"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Problems"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewDiagnosis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Diagnosis"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewUnmatchedSymptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unmatched Symptoms"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/textViewUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="16sp"
+            android:padding="4dp" />
+        <EditText
+            android:id="@+id/editTextDiseaseResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Disease Result" />
+        <Button
+            android:id="@+id/buttonSaveDiseaseResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+    </LinearLayout>
+</FrameLayout>

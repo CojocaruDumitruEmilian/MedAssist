@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="uniqueSymptom">
+        <item>Pain chest</item>
+        <item>Shortness of breath</item>
+        <item>Dizziness</item>
+        <!-- Adaugă aici celelalte simptome -->
+    </string-array>
+</resources>

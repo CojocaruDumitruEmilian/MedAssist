@@ -1,0 +1,45 @@
+<!-- activity_doctor_info.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@drawable/doctorinfo"
+
+    tools:context=".DoctorInfoActivity">
+
+    <EditText
+        android:id="@+id/editTextFirstName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="First Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editTextLastName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextFirstName"
+        android:hint="Last Name"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/spinnerSpecialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextLastName"
+        android:layout_marginBottom="16dp"
+        android:entries="@array/specializations" />
+
+    <Button
+        android:id="@+id/buttonDone"
+        style="@style/WhiteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerSpecialization"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Done" />
+
+</RelativeLayout>

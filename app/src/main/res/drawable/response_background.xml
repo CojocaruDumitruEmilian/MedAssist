@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Fundal alb -->
+    <corners android:radius="8dp"/> <!-- Colțuri rotunjite -->
+    <stroke android:width="2dp" android:color="#000000"/> <!-- Contur negru -->
+</shape>
