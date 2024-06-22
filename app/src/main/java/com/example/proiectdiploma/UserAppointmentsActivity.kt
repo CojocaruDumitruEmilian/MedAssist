@@ -16,13 +16,11 @@ class UserAppointmentsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_appointments)
 
-        // Inițializează referința la nodul "appointments" pentru utilizatorul curent
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             val uid = currentUser.uid
             appointmentsRef = FirebaseDatabase.getInstance().getReference("appointments/$uid")
 
-            // Afișează toate programările pentru utilizatorul curent
             appointmentsRef.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     val appointmentsList = mutableListOf<String>()

@@ -32,13 +32,13 @@ class CommonDiseaseAdapter(private val context: Context, private val dataSource:
 
         val commonDisease = getItem(position) as CommonDisease
 
-        // Log data to see what is being set
+
         Log.d("CommonDiseaseAdapter", "City: ${commonDisease.city}, Disease: ${commonDisease.disease}")
 
         cityTextView.text = commonDisease.city
         diseaseTextView.text = commonDisease.disease
 
-        // Check if the TextViews are correctly assigned
+
         Log.d("CommonDiseaseAdapter", "cityTextView text: ${cityTextView.text}")
         Log.d("CommonDiseaseAdapter", "diseaseTextView text: ${diseaseTextView.text}")
 

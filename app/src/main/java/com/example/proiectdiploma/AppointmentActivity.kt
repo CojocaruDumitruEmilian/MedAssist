@@ -33,7 +33,7 @@ class AppointmentActivity : AppCompatActivity() {
 
             val appointmentDetailsText = "Appointment with $doctorFirstName $doctorLastName on $selectedDate at $selectedTime"
 
-            // Afișează detalii într-un TextView sau în alt mod dorit
+
             val appointmentDetailsTextView: TextView = findViewById(R.id.appointmentDetailsTextView)
             appointmentDetailsTextView.text = appointmentDetailsText
 
@@ -42,7 +42,7 @@ class AppointmentActivity : AppCompatActivity() {
                 val uid = user.uid
                 val userName = user.displayName ?: "User"
 
-                // Salvează detaliile programării în lista utilizatorului
+
                 val appointmentsRef = FirebaseDatabase.getInstance().getReference("appointments/$uid")
                 val appointmentId = appointmentsRef.push().key
                 appointmentId?.let {
@@ -50,7 +50,7 @@ class AppointmentActivity : AppCompatActivity() {
                     appointmentsRef.child(it).setValue(appointmentDetails)
                 }
 
-                // Salvează detaliile programării în lista doctorului
+
                 if (doctorId != null) {
                     val doctorAppointmentsRef = FirebaseDatabase.getInstance().getReference("doctors/$doctorId/pending")
                     val doctorAppointmentId = doctorAppointmentsRef.push().key

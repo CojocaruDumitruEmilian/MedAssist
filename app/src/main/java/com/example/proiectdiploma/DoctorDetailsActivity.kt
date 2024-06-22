@@ -59,10 +59,10 @@ class DoctorDetailsActivity : AppCompatActivity() {
             finish()
         }
 
-        // Obține rating-ul mediu al doctorului
+
         getDoctorRating()
 
-        // Găsește următorul interval disponibil pentru doctor
+
         findNextAvailableSlot()
 
         scheduleButton.setOnClickListener {
@@ -157,7 +157,6 @@ class DoctorDetailsActivity : AppCompatActivity() {
             return
         }
 
-        // Verificăm dacă doctorul are deja o programare la acea dată și oră
         database.child("appointments")
             .orderByChild("doctorId")
             .equalTo(doctorId)

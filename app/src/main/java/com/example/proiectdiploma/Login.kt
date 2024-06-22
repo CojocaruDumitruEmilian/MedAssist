@@ -170,7 +170,6 @@ class Login : AppCompatActivity() {
                     if (accepted) {
                         Log.d("LoginActivity", "User accepted, checking if disease result saved")
 
-                        // Obține numele doctorului folosind doctorId
                         database.child("doctors").child(doctorId).addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(doctorSnapshot: DataSnapshot) {
                                 val firstName = doctorSnapshot.child("firstName").value?.toString() ?: "Unknown"
@@ -179,11 +178,9 @@ class Login : AppCompatActivity() {
 
                                 Log.d("LoginActivity", "Doctor Name: $doctorName")
 
-                                // Verifică dacă rezultatul bolii a fost salvat
                                 database.child("users").child(userId).child("hasSavedDiseaseResult").addListenerForSingleValueEvent(object : ValueEventListener {
                                     override fun onDataChange(snapshot: DataSnapshot) {
                                         if (snapshot.exists() && snapshot.value == true) {
-                                            // Redirecționează către RateDoctorActivity
                                             Log.d("LoginActivity", "Disease result saved, redirecting to RateDoctorActivity")
                                             val intent = Intent(this@Login, RateDoctor::class.java).apply {
                                                 putExtra("DOCTOR_ID", doctorId)
@@ -192,7 +189,6 @@ class Login : AppCompatActivity() {
                                             startActivity(intent)
                                             finish()
                                         } else {
-                                            // Redirecționează către UserNotificationsActivity
                                             Log.d("LoginActivity", "Disease result not saved, redirecting to UserNotificationsActivity")
                                             val intent = Intent(this@Login, UserNotificationsActivity::class.java)
                                             startActivity(intent)

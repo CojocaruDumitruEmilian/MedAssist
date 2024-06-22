@@ -54,7 +54,7 @@ class Diseases {
                 "Unable to concentrate",
                 "Homelessness"
             )
-            // Adaugă și alte boli cu simptomele asociate aici
+
         )
     }
 }

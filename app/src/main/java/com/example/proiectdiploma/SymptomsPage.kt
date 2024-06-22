@@ -249,10 +249,10 @@ class SymptomsPage : AppCompatActivity() {
                                 doctorsList.add(Doctor(doctorId, doctorName, doctorRating))
                             }
 
-                            // Sort doctors by rating
+
                             doctorsList.sortByDescending { it.rating }
 
-                            // Add sorted doctors to the layout
+
                             for (doctor in doctorsList) {
                                 Log.d("SymptomsPage", "Found doctor: ${doctor.name}")
                                 val textView = TextView(this@SymptomsPage).apply {

@@ -22,8 +22,8 @@ class SecondSymptomsPage : AppCompatActivity() {
     private lateinit var resultTextView: TextView
     private lateinit var inputText: EditText
     private lateinit var sendButton: Button
-    private lateinit var voiceButton: Button // Button pentru recunoaștere vocală
-    private lateinit var backButton: Button // Button pentru a reveni la SymptomsPage
+    private lateinit var voiceButton: Button
+    private lateinit var backButton: Button
     private lateinit var database: DatabaseReference
     private val REQ_CODE_SPEECH_INPUT = 100
 
@@ -34,8 +34,8 @@ class SecondSymptomsPage : AppCompatActivity() {
         resultTextView = findViewById(R.id.resultTextView)
         inputText = findViewById(R.id.inputText)
         sendButton = findViewById(R.id.sendButton)
-        voiceButton = findViewById(R.id.voiceButton) // Inițializare Button pentru recunoaștere vocală
-        backButton = findViewById(R.id.backButton) // Inițializare Button pentru a reveni la SymptomsPage
+        voiceButton = findViewById(R.id.voiceButton)
+        backButton = findViewById(R.id.backButton)
 
         database = FirebaseDatabase.getInstance().reference
 
@@ -43,12 +43,10 @@ class SecondSymptomsPage : AppCompatActivity() {
             sendApiRequest()
         }
 
-        // Funcționalitate pentru butonul de recunoaștere vocală
         voiceButton.setOnClickListener {
             promptSpeechInput()
         }
 
-        // Funcționalitate pentru butonul de revenire
         backButton.setOnClickListener {
             val intent = Intent(this, SymptomsPage::class.java)
             startActivity(intent)

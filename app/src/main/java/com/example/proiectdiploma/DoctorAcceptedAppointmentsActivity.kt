@@ -194,7 +194,7 @@ class DoctorAcceptedAppointmentsActivity : AppCompatActivity() {
                 Toast.makeText(this, "Disease result updated successfully.", Toast.LENGTH_SHORT).show()
                 userDetailsLayout.visibility = View.GONE // Ascunde layout-ul după salvare
 
-                // Marchez faptul că rezultatul bolii a fost salvat
+
                 database.child("users").child(userId).child("hasSavedDiseaseResult").setValue(true)
             } else {
                 Log.e("DoctorAcceptedAppointmentsActivity", "Failed to update disease result: ${task.exception?.message}")
