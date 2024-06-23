@@ -2,7 +2,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Layout-ul pentru întâlnirile acceptate -->
+
     <LinearLayout
         android:id="@+id/acceptedAppointmentsLayout"
         android:layout_width="match_parent"
@@ -11,7 +11,7 @@
         android:background="@drawable/doctorappointments"
         android:padding="16dp" />
 
-    <!-- Layout-ul pentru detaliile utilizatorului, inițial invizibil -->
+
     <LinearLayout
         android:id="@+id/userDetailsLayout"
         android:layout_width="match_parent"
@@ -22,7 +22,6 @@
         android:visibility="gone"
         android:elevation="10dp">
 
-        <!-- Conținutul layout-ului pentru detaliile utilizatorului -->
         <TextView
             android:id="@+id/textViewName"
             android:layout_width="wrap_content"
@@ -31,7 +30,6 @@
             android:textSize="16sp"
             android:padding="4dp" />
 
-        <!-- Alte elemente pentru detaliile utilizatorului -->
         <TextView
             android:id="@+id/textViewEmail"
             android:layout_width="wrap_content"
