@@ -50,13 +50,13 @@ class DoctorInfoActivity : AppCompatActivity() {
             FirebaseDatabase.getInstance().reference.child("doctors").child(userId).setValue(doctorInfo)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        // Afișează un mesaj de confirmare și redirecționează către login
+
                         Toast.makeText(this, "Doctor info saved successfully.", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, Login::class.java)
                         startActivity(intent)
                         finish()
                     } else {
-                        // Afișează un mesaj de eroare
+
                         Toast.makeText(this, "Failed to save doctor info: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
                 }

@@ -12,6 +12,7 @@ import com.google.android.material.button.MaterialButton
 
 class SymptomsPage : AppCompatActivity() {
     private lateinit var resultTextView: TextView
+    private lateinit var resultScrollView: ScrollView
     private lateinit var selectedSymptomsLayout: LinearLayout
     private lateinit var symptomDropdown: Spinner
     private lateinit var symptomAutoComplete: AutoCompleteTextView
@@ -19,6 +20,7 @@ class SymptomsPage : AppCompatActivity() {
     private lateinit var doctorInfoLayout: LinearLayout
     private lateinit var acceptedMessageTextView: TextView
     private lateinit var selectedSymptomsScrollView: ScrollView
+    private lateinit var selectedSymptomsCardView: androidx.cardview.widget.CardView
     private var selectedSymptomsList = mutableListOf<String>()
     private lateinit var database: DatabaseReference
     private lateinit var auth: FirebaseAuth
@@ -30,6 +32,8 @@ class SymptomsPage : AppCompatActivity() {
 
         selectedSymptomsLayout = findViewById(R.id.selectedSymptomsLayout)
         resultTextView = findViewById(R.id.resultTextView)
+        resultScrollView = findViewById(R.id.resultScrollView)
+        selectedSymptomsCardView = findViewById(R.id.selectedSymptomsCardView)
         symptomDropdown = findViewById(R.id.symptomDropdown)
         symptomAutoComplete = findViewById(R.id.symptomAutoComplete)
         generateButton = findViewById(R.id.generateButton)
@@ -41,6 +45,7 @@ class SymptomsPage : AppCompatActivity() {
         selectedSymptomsLayout.visibility = View.GONE
         doctorInfoLayout.visibility = View.GONE
         resultTextView.visibility = View.GONE
+        resultScrollView.visibility = View.GONE
 
         database = FirebaseDatabase.getInstance().reference
         auth = FirebaseAuth.getInstance()
@@ -179,7 +184,9 @@ class SymptomsPage : AppCompatActivity() {
             }
         }
 
+        selectedSymptomsCardView.visibility = View.GONE // Ascundem cardul cu simptomele selectate
         resultTextView.visibility = View.VISIBLE
+        resultScrollView.visibility = View.VISIBLE
         resultTextView.setBackgroundColor(resources.getColor(android.R.color.white, null)) // Set background to white
         resultTextView.setTextColor(resources.getColor(android.R.color.black, null)) // Set text color to black
     }
@@ -229,7 +236,154 @@ class SymptomsPage : AppCompatActivity() {
         val specialty = when (disease) {
             "Hypertensive disease" -> "Cardiologist"
             "Coronavirus disease 2019" -> "Pulmonologist"
-            "Depression mental" -> "Neurologist"
+            "Diabetes" -> "Endocrinologist"
+            "Depression mental" -> "Psychiatrist"
+            "Depressive disorder" -> "Psychiatrist"
+            "Coronary arteriosclerosis" -> "Cardiologist"
+            "Coronary heart disease" -> "Cardiologist"
+            "Pneumonia" -> "Pulmonologist"
+            "Failure heart congestive" -> "Cardiologist"
+            "Accident cerebrovascular" -> "Neurologist"
+            "Asthma" -> "Pulmonologist"
+            "Myocardial infarction" -> "Cardiologist"
+            "Hypercholesterolemia" -> "Cardiologist"
+            "Infection" -> "Infectious Disease Specialist"
+            "Infection urinary tract" -> "Urologist"
+            "Anemia" -> "Hematologist"
+            "Chronic obstructive airway disease" -> "Pulmonologist"
+            "Dementia" -> "Neurologist"
+            "Insufficiency renal" -> "Nephrologist"
+            "Confusion" -> "Neurologist"
+            "Degenerative polyarthritis" -> "Rheumatologist"
+            "Hypothyroidism" -> "Endocrinologist"
+            "Anxiety state" -> "Psychiatrist"
+            "Malignant neoplasms" -> "Oncologist"
+            "Primary malignant neoplasm" -> "Oncologist"
+            "Acquired immuno-deficiency syndrome" -> "Infectious Disease Specialist"
+            "Hiv" -> "Infectious Disease Specialist"
+            "Hiv infections" -> "Infectious Disease Specialist"
+            "Cellulitis" -> "Dermatologist"
+            "Gastroesophageal reflux disease" -> "Gastroenterologist"
+            "Septicemia" -> "Infectious Disease Specialist"
+            "Systemic infection" -> "Infectious Disease Specialist"
+            "Sepsis (invertebrate)" -> "Infectious Disease Specialist"
+            "Deep vein thrombosis" -> "Vascular Surgeon"
+            "Dehydration" -> "General Practitioner"
+            "Neoplasm" -> "Oncologist"
+            "Embolism pulmonary" -> "Pulmonologist"
+            "Epilepsy" -> "Neurologist"
+            "Cardiomyopathy" -> "Cardiologist"
+            "Chronic kidney failure" -> "Nephrologist"
+            "Carcinoma" -> "Oncologist"
+            "Hepatitis c" -> "Hepatologist"
+            "Peripheral vascular disease" -> "Vascular Surgeon"
+            "Psychotic disorder" -> "Psychiatrist"
+            "Hyperlipidemia" -> "Cardiologist"
+            "Bipolar disorder" -> "Psychiatrist"
+            "Obesity" -> "Endocrinologist"
+            "Ischemia" -> "Cardiologist"
+            "Cirrhosis" -> "Hepatologist"
+            "Exanthema" -> "Dermatologist"
+            "Benign prostatic hypertrophy" -> "Urologist"
+            "Kidney failure acute" -> "Nephrologist"
+            "Mitral valve insufficiency" -> "Cardiologist"
+            "Arthritis" -> "Rheumatologist"
+            "Bronchitis" -> "Pulmonologist"
+            "Hemiparesis" -> "Neurologist"
+            "Osteoporosis" -> "Endocrinologist"
+            "Transient ischemic attack" -> "Neurologist"
+            "Adenocarcinoma" -> "Oncologist"
+            "Paranoia" -> "Psychiatrist"
+            "Pancreatitis" -> "Gastroenterologist"
+            "Incontinence" -> "Urologist"
+            "Paroxysmal dyspnea" -> "Pulmonologist"
+            "Hernia" -> "General Surgeon"
+            "Malignant neoplasm of prostate" -> "Oncologist"
+            "Carcinoma prostate" -> "Oncologist"
+            "Edema pulmonary" -> "Pulmonologist"
+            "Lymphatic diseases" -> "Hematologist"
+            "Stenosis aortic valve" -> "Cardiologist"
+            "Malignant neoplasm of breast" -> "Oncologist"
+            "Carcinoma breast" -> "Oncologist"
+            "Schizophrenia" -> "Psychiatrist"
+            "Diverticulitis" -> "Gastroenterologist"
+            "Overload fluid" -> "Nephrologist"
+            "Ulcer peptic" -> "Gastroenterologist"
+            "Osteomyelitis" -> "Orthopedic Surgeon"
+            "Gastritis" -> "Gastroenterologist"
+            "Bacteremia" -> "Infectious Disease Specialist"
+            "Failure kidney" -> "Nephrologist"
+            "Sickle cell anemia" -> "Hematologist"
+            "Failure heart" -> "Cardiologist"
+            "Upper respiratory infection" -> "General Practitioner"
+            "Hepatitis" -> "Hepatologist"
+            "Hypertension pulmonary" -> "Cardiologist"
+            "Deglutition disorder" -> "Gastroenterologist"
+            "Gout" -> "Rheumatologist"
+            "Thrombocytopaenia" -> "Hematologist"
+            "Hypoglycemia" -> "Endocrinologist"
+            "Pneumonia aspiration" -> "Pulmonologist"
+            "Colitis" -> "Gastroenterologist"
+            "Diverticulosis" -> "Gastroenterologist"
+            "Suicide attempt" -> "Psychiatrist"
+            "Pneumocystis carinii pneumonia" -> "Pulmonologist"
+            "Hepatitis b" -> "Hepatologist"
+            "Parkinson disease" -> "Neurologist"
+            "Lymphoma" -> "Oncologist"
+            "Hyperglycemia" -> "Endocrinologist"
+            "Encephalopathy" -> "Neurologist"
+            "Tricuspid valve insufficiency" -> "Cardiologist"
+            "Alzheimer's disease" -> "Neurologist"
+            "Candidiasis" -> "Infectious Disease Specialist"
+            "Oral candidiasis" -> "Infectious Disease Specialist"
+            "Neuropathy" -> "Neurologist"
+            "Kidney disease" -> "Nephrologist"
+            "Fibroid tumor" -> "Gynecologist"
+            "Glaucoma" -> "Ophthalmologist"
+            "Neoplasm metastasis" -> "Oncologist"
+            "Malignant tumor of colon" -> "Oncologist"
+            "Carcinoma colon" -> "Oncologist"
+            "Ketoacidosis diabetic" -> "Endocrinologist"
+            "Tonic-clonic epilepsy" -> "Neurologist"
+            "Tonic-clonic seizures" -> "Neurologist"
+            "Malignant neoplasms" -> "Oncologist"
+            "Respiratory failure" -> "Pulmonologist"
+            "Melanoma" -> "Oncologist"
+            "Gastroenteritis" -> "Gastroenterologist"
+            "Malignant neoplasm of lung" -> "Oncologist"
+            "Carcinoma of lung" -> "Oncologist"
+            "Manic disorder" -> "Psychiatrist"
+            "Personality disorder" -> "Psychiatrist"
+            "Primary carcinoma of the liver cells" -> "Oncologist"
+            "Emphysema pulmonary" -> "Pulmonologist"
+            "Hemorrhoids" -> "General Surgeon"
+            "Spasm bronchial" -> "Pulmonologist"
+            "Aphasia" -> "Neurologist"
+            "Obesity morbid" -> "Endocrinologist"
+            "Pyelonephritis" -> "Urologist"
+            "Endocarditis" -> "Cardiologist"
+            "Effusion pericardial" -> "Cardiologist"
+            "Pericardial effusion body substance" -> "Cardiologist"
+            "Chronic alcoholic intoxication" -> "Psychiatrist"
+            "Pneumothorax" -> "Pulmonologist"
+            "Delirium" -> "Neurologist"
+            "Neutropenia" -> "Hematologist"
+            "Hyperbilirubinemia" -> "Hepatologist"
+            "Influenza" -> "General Practitioner"
+            "Dependence" -> "Psychiatrist"
+            "Thrombus" -> "Vascular Surgeon"
+            "Cholecystitis" -> "Gastroenterologist"
+            "Hernia hiatal" -> "Gastroenterologist"
+            "Migraine disorders" -> "Neurologist"
+            "Pancytopenia" -> "Hematologist"
+            "Cholelithiasis" -> "Gastroenterologist"
+            "Biliary calculus" -> "Gastroenterologist"
+            "Tachycardia sinus" -> "Cardiologist"
+            "Ileus" -> "Gastroenterologist"
+            "Adhesion" -> "General Surgeon"
+            "Delusion" -> "Psychiatrist"
+            "Affect labile" -> "Psychiatrist"
+            "Decubitus ulcer" -> "General Practitioner"
             else -> null
         }
 
@@ -249,15 +403,18 @@ class SymptomsPage : AppCompatActivity() {
                                 doctorsList.add(Doctor(doctorId, doctorName, doctorRating))
                             }
 
-
                             doctorsList.sortByDescending { it.rating }
-
 
                             for (doctor in doctorsList) {
                                 Log.d("SymptomsPage", "Found doctor: ${doctor.name}")
                                 val textView = TextView(this@SymptomsPage).apply {
                                     text = "Specialist $specialty: ${doctor.name} - Rating: ${doctor.rating}"
                                     textSize = 16f
+                                    setPadding(16, 16, 16, 16)
+                                    layoutParams = LinearLayout.LayoutParams(
+                                        LinearLayout.LayoutParams.MATCH_PARENT,
+                                        LinearLayout.LayoutParams.WRAP_CONTENT
+                                    )
                                     setOnClickListener {
                                         val intent = Intent(this@SymptomsPage, DoctorDetailsActivity::class.java).apply {
                                             putExtra("DOCTOR_ID", doctor.id)
@@ -340,6 +497,7 @@ class SymptomsPage : AppCompatActivity() {
         generateButton.visibility = View.GONE
         doctorInfoLayout.visibility = View.GONE
         resultTextView.visibility = View.GONE
+        resultScrollView.visibility = View.GONE
     }
 
     private fun showSymptomsSelection() {
@@ -350,6 +508,7 @@ class SymptomsPage : AppCompatActivity() {
         generateButton.visibility = View.VISIBLE
         doctorInfoLayout.visibility = View.GONE
         resultTextView.visibility = View.GONE
+        resultScrollView.visibility = View.GONE
     }
 
     private fun removeSelectedSymptom(symptom: String) {
